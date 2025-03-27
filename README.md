@@ -52,5 +52,5 @@ Feel free to fork the repository and submit pull requests.
 This project is licensed under the MIT License.
 
 ---
-Made with ❤️ by Abdelrhman Ahmed
+
 
