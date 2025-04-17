@@ -37,7 +37,8 @@ export const ReviewSection = () => {
           <img
             src={reviews[activeIndex].image || "lovable-uploads/comment.png"}
             alt="comment"
-            className="hidden md:block absolute h-[80%] top-[10%] left-[-150px]"
+            // className="hidden md:block absolute h-[80%] top-[10%] left-[-150px]"
+            className="hidden md:block absolute top-[10%] left-[-150px] w-[200px] h-[350px] object-cover rounded-lg"
           />
         )}
 
@@ -58,7 +59,7 @@ export const ReviewSection = () => {
               ))}
             </div>
 
-            <div className="hidden md:block">
+            {/* <div className="hidden md:block">
               <button
                 onClick={handlePrev}
                 className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 p-3 rounded-full shadow-lg hover:bg-white transition-colors"
@@ -73,7 +74,7 @@ export const ReviewSection = () => {
               >
                 →
               </button>
-            </div>
+            </div> */}
 
             <div className="flex justify-center gap-2 mt-8">
               {reviews.map((_, index) => (
