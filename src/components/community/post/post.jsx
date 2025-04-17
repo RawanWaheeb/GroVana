@@ -6,7 +6,7 @@ import { FaEdit, FaSave, FaTimes } from 'react-icons/fa';
 const Post = ({ post }) => {
   const [comments, setComments] = useState(post.comments.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)));
   const [newComment, setNewComment] = useState("");
-  const [likes, setLikes] = useState(post.likes);
+  // const [likes, setLikes] = useState(post.likes);
   const [isEditingPost, setIsEditingPost] = useState(false);
   const [editedPostContent, setEditedPostContent] = useState(post.content);
   const [editingCommentId, setEditingCommentId] = useState(null);
@@ -143,7 +143,7 @@ const Post = ({ post }) => {
 
       <div className="flex items-center gap-2 mb-4">
         <button
-          onClick={() => setLikes(likes + 1)}
+          // onClick={() => setLikes(likes + 1)}
           className="flex items-center gap-1 text-gray-600 hover:text-green-600"
         >
           <svg
@@ -152,14 +152,14 @@ const Post = ({ post }) => {
             stroke="currentColor"
             viewBox="0 0 24 24"
           >
-            <path
+            {/* <path
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth={2}
               d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-            />
+            /> */}
           </svg>
-          {likes}
+          {/* {likes} */}
         </button>
       </div>
 
@@ -253,9 +253,4 @@ const Post = ({ post }) => {
 };
 
 export default Post;
-
-
-
-
-
 
