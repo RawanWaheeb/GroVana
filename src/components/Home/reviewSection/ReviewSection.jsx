@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -17,10 +18,19 @@ export const ReviewSection = () => {
 
     fetchReviews();
 
-    const intervalId = setInterval(fetchReviews, 60000); // Poll every 60 seconds
+    const intervalId = setInterval(fetchReviews, 60000); 
 
     return () => clearInterval(intervalId);
   }, []);
+
+
+  useEffect(() => {
+    const changeInterval = setInterval(() => {
+      setActiveIndex((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
+    }, 4000); 
+
+    return () => clearInterval(changeInterval);
+  }, [reviews.length]);
 
   const handleNext = () => {
     setActiveIndex((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
@@ -98,7 +108,6 @@ export const ReviewSection = () => {
 const ReviewCard = ({ review }) => {
   return (
     <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start p-15 md:p-8">
-      
       <div className="flex-1 space-y-3 md:space-y-4">
         <h3 className="text-xl md:text-2xl font-semibold">{review.user_full_name}</h3>
         <p className="text-gray-700 leading-relaxed text-sm md:text-base">
@@ -109,8 +118,5 @@ const ReviewCard = ({ review }) => {
     </div>
   );
 };
-
-
-
 
 
